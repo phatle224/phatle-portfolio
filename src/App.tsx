@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   Database,
-  Layers,
   TrendingUp,
-  GitBranch,
   Terminal,
   Mail,
   MapPin,
@@ -373,51 +371,75 @@ export default function App() {
 
               <div className="tech-grid">
                 <div className="tech-card">
-                  <div className="tech-icon">🐍</div>
+                  <div className="tech-icon">
+                    <img src="/python.svg" alt="Python" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Python</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">💾</div>
+                  <div className="tech-icon">
+                    <img src="/sql.svg" alt="SQL" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">SQL</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">☕</div>
+                  <div className="tech-icon">
+                    <img src="/java.svg" alt="Java" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Java</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">⚡</div>
+                  <div className="tech-icon">
+                    <img src="/fastapi.svg" alt="FastAPI" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">FastAPI</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">🪵</div>
+                  <div className="tech-icon">
+                    <img src="/clickhouse.svg" alt="ClickHouse" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">ClickHouse</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">🐘</div>
+                  <div className="tech-icon">
+                    <img src="/postgresql.svg" alt="Postgres" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Postgres</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">❄️</div>
+                  <div className="tech-icon">
+                    <img src="/iceberg.svg" alt="Iceberg" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Iceberg</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">🌊</div>
+                  <div className="tech-icon">
+                    <img src="/apachekafka.svg" alt="Kafka" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Kafka</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">⚙️</div>
+                  <div className="tech-icon">
+                    <img src="/dbt.svg" alt="dbt" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">dbt</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">🌬️</div>
+                  <div className="tech-icon">
+                    <img src="/apacheairflow.svg" alt="Airflow" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Airflow</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">🐳</div>
+                  <div className="tech-icon">
+                    <img src="/docker.svg" alt="Docker" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Docker</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">📈</div>
+                  <div className="tech-icon">
+                    <img src="/grafana.svg" alt="Grafana" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  </div>
                   <div className="tech-name">Grafana</div>
                 </div>
               </div>
