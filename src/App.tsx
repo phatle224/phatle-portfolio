@@ -1,16 +1,16 @@
 import React from 'react';
-import { 
-  Database, 
-  Layers, 
-  TrendingUp, 
-  GitBranch, 
-  Terminal, 
-  Mail, 
-  MapPin, 
-  Menu, 
-  X, 
-  FileText, 
-  ChevronRight, 
+import {
+  Database,
+  Layers,
+  TrendingUp,
+  GitBranch,
+  Terminal,
+  Mail,
+  MapPin,
+  Menu,
+  X,
+  FileText,
+  ChevronRight,
   Award,
   Cpu
 } from 'lucide-react';
@@ -70,7 +70,7 @@ export default function App() {
       </div>
 
       {/* Sticky Header / Navigation */}
-      <header className="header" style={{ 
+      <header className="header" style={{
         borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
         background: scrolled ? 'rgba(3, 7, 18, 0.85)' : 'rgba(3, 7, 18, 0.4)'
       }}>
@@ -85,8 +85,8 @@ export default function App() {
           <nav className="desktop-nav">
             <ul className="nav-menu">
               <li>
-                <button 
-                  onClick={() => scrollTo('home')} 
+                <button
+                  onClick={() => scrollTo('home')}
                   className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -94,8 +94,8 @@ export default function App() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('about')} 
+                <button
+                  onClick={() => scrollTo('about')}
                   className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -103,8 +103,8 @@ export default function App() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('experience')} 
+                <button
+                  onClick={() => scrollTo('experience')}
                   className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -112,8 +112,8 @@ export default function App() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('skills')} 
+                <button
+                  onClick={() => scrollTo('skills')}
                   className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -121,8 +121,8 @@ export default function App() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('projects')} 
+                <button
+                  onClick={() => scrollTo('projects')}
                   className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -130,8 +130,8 @@ export default function App() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('contact')} 
+                <button
+                  onClick={() => scrollTo('contact')}
                   className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
                 >
@@ -142,8 +142,8 @@ export default function App() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="mobile-menu-btn" 
+          <button
+            className="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -171,7 +171,7 @@ export default function App() {
             <div className="hero-subtitle">Data Platform Engineering</div>
             <h1 className="hero-title">
               Hello, I'm <br />
-              <span className="text-gradient-green-blue text-glow">Lê Hồng Phát</span>
+              <span className="text-gradient-green-blue text-glow">Le Hong Phat</span>
             </h1>
             <p className="hero-desc">
               I am a results-oriented Data Engineer specializing in real-time streaming architectures, high-performance OLAP systems, and automated data quality. I design, build, and optimize enterprise-scale data infrastructure to bridge the gap between raw telemetry and business decisions.
@@ -180,8 +180,8 @@ export default function App() {
               <button onClick={() => scrollTo('projects')} className="btn btn-primary">
                 Explore Projects <ChevronRight size={18} />
               </button>
-              <a href="/cv.md" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                View Markdown CV <FileText size={18} />
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                View PDF CV <FileText size={18} />
               </a>
             </div>
             <div className="contact-socials" style={{ marginTop: '32px' }}>
@@ -200,13 +200,13 @@ export default function App() {
           <div className="hero-visual">
             <div className="avatar-container">
               <div className="avatar-inner">
-                ⚡
+                <img src="/avatar.jpg" alt="Le Hong Phat" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
             <div className="hero-glow"></div>
           </div>
         </div>
-        
+
         <div className="scroll-indicator">
           <span>Scroll Down</span>
           <div className="scroll-mouse">
@@ -321,7 +321,7 @@ export default function App() {
                     <div className="progress-fill green-fill" style={{ width: '90%' }}></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="skill-info">
                     <span className="skill-name">OLAP & Data Warehousing (ClickHouse, PostgreSQL)</span>
@@ -370,7 +370,7 @@ export default function App() {
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
                 I am highly comfortable setting up, querying, and managing the following technologies in local development and production environments:
               </p>
-              
+
               <div className="tech-grid">
                 <div className="tech-card">
                   <div className="tech-icon">🐍</div>
@@ -487,7 +487,7 @@ export default function App() {
                   <span className="badge">Prometheus</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                  <a href="https://github.com/phatle224/Hybrid-Data-Ingestion-Streaming-Platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> View GitHub Profile
                   </a>
                 </div>
@@ -545,6 +545,64 @@ export default function App() {
                 <div className="project-links">
                   <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="project-link">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> View GitHub Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 5: Agent SQL */}
+            <div className="glass-card project-card blue-hover">
+              <div className="project-visual blue">
+                <Terminal className="project-visual-icon" size={56} />
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>AI Agents & NL2SQL</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">Agent SQL (NL2SQL Platform)</h3>
+                </div>
+                <p className="project-desc">
+                  Co-developed a production-ready NL2SQL platform powered by AI Agents. Translates natural language queries into secure SQL executions. Built with a microservices architecture featuring `nl2sql-service` for prompt mapping and `query-service` for safe, audited database executions with strict protection against prompt injection and hallucinations.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">Python</span>
+                  <span className="badge">FastAPI</span>
+                  <span className="badge">OpenAI API</span>
+                  <span className="badge">PostgreSQL</span>
+                  <span className="badge">React</span>
+                  <span className="badge">Docker</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/Agent_SQL" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 6: AI FOR EDUCATION */}
+            <div className="glass-card project-card purple-hover">
+              <div className="project-visual purple">
+                <Cpu className="project-visual-icon" size={56} />
+                <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Collab AI Project</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">AI for Education Platform</h3>
+                </div>
+                <p className="project-desc">
+                  Collaborative platform utilizing LLMs and generative AI tools to optimize learning workflows. Features intelligent tutoring, automated grading assistants, and dynamic curriculum generation. Aims to streamline educational processes and provide personalized tutoring paths.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">Python</span>
+                  <span className="badge">PyTorch</span>
+                  <span className="badge">HuggingFace</span>
+                  <span className="badge">FastAPI</span>
+                  <span className="badge">Next.js</span>
+                  <span className="badge">Gemini API</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/AI-FOR-EDUCATION" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
               </div>
