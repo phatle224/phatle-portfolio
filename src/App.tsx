@@ -168,7 +168,7 @@ export default function App() {
       <section id="home" className="hero-wrapper">
         <div className="container hero-content">
           <div className="animate-slide-up">
-            <div className="hero-subtitle">Data Platform Engineering</div>
+            <div className="hero-subtitle">Data Engineer</div>
             <h1 className="hero-title">
               Hello, I'm <br />
               <span className="text-gradient-green-blue text-glow">Le Hong Phat</span>
@@ -488,63 +488,7 @@ export default function App() {
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/Hybrid-Data-Ingestion-Streaming-Platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> View GitHub Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="glass-card project-card purple-hover">
-              <div className="project-visual purple">
-                <GitBranch className="project-visual-icon" size={56} />
-                <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>ETL & Governance</div>
-              </div>
-              <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">Retail Enterprise Data Platform</h3>
-                </div>
-                <p className="project-desc">
-                  Aggregated transactional and marketing assets from 12 distinct internal database shards into a consolidated warehouse hosted on GCP BigQuery. Engineered dependency graphs using Apache Airflow, and deployed OpenMetadata as the central data dictionary. This mapping established complete end-to-end data lineage logs for compliance audits.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">Airflow</span>
-                  <span className="badge">BigQuery</span>
-                  <span className="badge">GCP</span>
-                  <span className="badge">OpenMetadata</span>
-                  <span className="badge">Data Lineage</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> View GitHub Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 */}
-            <div className="glass-card project-card">
-              <div className="project-visual">
-                <Layers className="project-visual-icon" size={56} />
-                <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Spark & Lakehouse</div>
-              </div>
-              <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">Banking Lakehouse & Platform Migration</h3>
-                </div>
-                <p className="project-desc">
-                  Supported the migration of legacy SQL Server data storage nodes into a cloud-native Delta Lake lakehouse powered by Databricks and PySpark. Implemented partition schemes on parquet tables to optimize queries and engineered row and column-level access permissions to meet strict banking compliance audits.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">PySpark</span>
-                  <span className="badge">Delta Lake</span>
-                  <span className="badge">Databricks</span>
-                  <span className="badge">Access Control</span>
-                  <span className="badge">Parquet</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="project-link">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> View GitHub Profile
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
               </div>
