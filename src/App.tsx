@@ -69,8 +69,8 @@ export default function App() {
 
       {/* Sticky Header / Navigation */}
       <header className="header" style={{
-        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
-        background: scrolled ? 'rgba(3, 7, 18, 0.85)' : 'rgba(3, 7, 18, 0.4)'
+        borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
+        background: scrolled ? 'rgba(252, 250, 244, 0.85)' : 'rgba(252, 250, 244, 0.4)'
       }}>
         <div className="container header-container">
           <div className="logo cursor-pointer" onClick={() => scrollTo('home')}>
@@ -189,7 +189,7 @@ export default function App() {
               <a href="https://linkedin.com/in/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
-              <a href="mailto:dmphat224@gmail.com" className="social-circle-btn purple" aria-label="Email">
+              <a href="mailto:hongphatle224@gmail.com" className="social-circle-btn purple" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
@@ -198,7 +198,7 @@ export default function App() {
           <div className="hero-visual">
             <div className="avatar-container">
               <div className="avatar-inner">
-                <img src="/avatar.jpg" alt="Le Hong Phat" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/avatar.jpg" alt="Le Hong Phat" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
             </div>
             <div className="hero-glow"></div>
@@ -598,7 +598,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="contact-label">Email</div>
-                  <a href="mailto:dmphat224@gmail.com" className="contact-value hover:underline">dmphat224@gmail.com</a>
+                  <a href="mailto:hongphatle224@gmail.com" className="contact-value hover:underline">hongphatle224@gmail.com</a>
                 </div>
               </div>
 
@@ -656,12 +656,12 @@ export default function App() {
             <a href="https://linkedin.com/in/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
-            <a href="mailto:dmphat224@gmail.com" className="social-circle-btn purple" aria-label="Email">
+            <a href="mailto:hongphatle224@gmail.com" className="social-circle-btn purple" aria-label="Email">
               <Mail size={18} />
             </a>
           </div>
           <p className="footer-text">
-            © {new Date().getFullYear()} Lê Hồng Phát. Handcrafted with <span className="footer-heart">❤</span> using React, TypeScript & Vite.
+            © {new Date().getFullYear()} Le Hong Phat. Handcrafted with <span className="footer-heart">❤</span> using React, TypeScript & Vite.
           </p>
         </div>
       </footer>

@@ -1,85 +1,75 @@
-# Lê Hồng Phát — Data Engineer
+**LE HONG PHAT**
 
-*   **Location:** Ho Chi Minh City, Vietnam
-*   **Email:** dmphat224@gmail.com
-*   **GitHub:** [github.com/phatle224](https://github.com/phatle224)
-*   **LinkedIn:** [linkedin.com/in/phatle224](https://linkedin.com/in/phatle224)
-*   **Availability:** July 2026 | Open to Full-time / Hybrid / Remote Roles
+**Data Engineer**
 
----
+<hongphatle224@gmail.com> | +84 899 932 767 | Ho Chi Minh City | [LinkedIn](https://www.linkedin.com/in/phat-le-674640330/) | [Github](https://github.com/phatle224)
 
-## 🚀 Professional Summary
+**SUMMARY**
 
-A results-driven Data Engineer with production experience designing, building, and operating high-throughput event-streaming pipelines and analytical data platforms.
-*   Specialized in building **dual-path (hot/cold) architectures** utilizing Apache Kafka, ClickHouse OLAP, MinIO/S3, and Apache Iceberg.
-*   Expertise in CDC ingestion (Debezium + Kafka Connect) with sub-2s end-to-end latency and federated query engines (Trino).
-*   Strong focus on data platform engineering, data governance (OpenMetadata, OpenLineage), data quality enforcement (dbt testing), and comprehensive real-time observability (Prometheus + Grafana).
+Data Engineer with 9 months of production experience at AFFINA Insurance, specializing in real-time CDC pipelines (Debezium + Kafka), dbt ELT platforms, and FMCG analytics architecture. Built production systems reducing data ingestion latency from batch-daily to under 2 seconds; independently designed an FMCG analytics platform on ClickHouse + Trino that cut OLAP query time from 12s to sub-100ms on 10M+ records. Committed to engineering data infrastructure that transforms raw operational data into fast, reliable business insight at scale.
 
----
+**TECHNICAL SKILLS**
 
-## 🛠️ Technical Skills
+- **Languages**: Python, SQL
+- **Data Pipeline & Orchestration**: Airflow, Kafka, Spark, Debezium, dbt, Trino, ETL/ELT
+- **Databases**: PostgreSQL, Oracle, MySQL, MongoDB, Redis, ClickHouse, Cassandra
+- **Infrastructure & Monitoring**: Docker, Prometheus, Grafana, Linux, Git
+- **Cloud Exposure**: AWS, GCP
+- **Concepts:** CDC, ETL/ELT, Data Modeling, Stream/Batch Processing, Data Warehouse/Lakehouse
 
-*   **Languages:** Python, SQL, Java
-*   **Pipeline & Streaming:** Apache Kafka, Debezium, Kafka Connect, FastAPI, gRPC, REST APIs
-*   **OLAP & Databases:** ClickHouse (MergeTree, Kafka Engine, Materialized Views), PostgreSQL, Oracle, MySQL, MongoDB, Redis, Cassandra
-*   **Lakehouse & Storage:** MinIO (S3-compatible), Apache Iceberg (Time-travel, Partition evolution), Parquet
-*   **Transformation & Orchestration:** Apache Airflow, dbt (Medallion structure, automated tests), PySpark (batch processing)
-*   **Semantic Layer & Governance:** Cube.js, OpenMetadata (Data catalog & discovery), OpenLineage
-*   **Infra & DevOps:** Docker, Kubernetes (Minikube), Prometheus, Grafana, Linux, Git, CI/CD
+**WORK EXPERIENCE**
 
----
+**Data Engineer Intern** _Sep 2025 - May 2026_
 
-## 💼 Work Experience
+**AFFINA Insurance**
 
-### **Data Engineer** | **AFFINA Insurance**
-*Ho Chi Minh City, Vietnam | Oct 2025 - Present (9 months)*
+- Data Platform Architecture (Phase 1): Built the end-to-end data platform capturing real-time MySQL CDC events via Debezium and scheduled Excel data, consolidating them into staging tables and normalized marts with under 2-second ingestion latency.
+- Enterprise Data Consolidation (Phase 2): Evolved the platform to resolve complex online-offline data integration issues; implemented custom Contract Pre-Processing and a Policy Parser to standardize schema discrepancies (e.g., splitting multi-insured contracts, mapping default beneficiaries), standardizing data across 50+ contract variants and enabling consistent policy reporting across business units.
+- Idempotency & Deduplication: Designed a real-time deduplication component utilizing Redis Contract Caching to track and validate record uniqueness, ensuring zero data loss and exact-once insertion into the Operational Data Store.
+- Event-Driven Architecture: Designed RabbitMQ event routing topology for 5 downstream consumer applications, implementing at-least-once delivery semantics and decoupling the core data platform from business-layer consumers - enabling independent scaling of each processing pipeline.
 
-*   **Real-time CDC Pipelines:** Built production CDC pipelines using Debezium + Kafka Connect, streaming database change events from 3 PostgreSQL source systems to the centralized analytics warehouse with end-to-end latency under 2 seconds and zero data loss.
-*   **Data Warehouse & dbt Orchestration:** Designed and maintained a 4-layer dbt ELT pipeline (Bronze → Silver → Gold → Mart) consolidating data from 5+ heterogeneous sources (PostgreSQL databases, external REST APIs, and flat files); implemented 54 automated data quality tests, achieving 99%+ accuracy across all fact tables.
-*   **Observability & SLA:** Built Kafka consumer lag and pipeline system metrics monitoring using Prometheus + Grafana, enabling real-time alerting and reducing pipeline incident detection and resolution time from hours to under 5 minutes.
-*   **Collaboration:** Collaborated closely with Data Analysts and business teams to define analytics requirements, design optimized star schemas, and resolve data quality issues for monthly reporting workflows across 2 business units.
+**PROJECTS**
 
----
+**FMCG Real-Time Analytics Platform** _2026_
 
-## 🏆 Key Projects
+**github.com/phatle224/fmcg-real-time-analytics**
 
-### **1. FMCG Real-Time Analytics Platform**
-*Jun 2026 - Jul 2026*
-*   **Architecture:** Designed a dual-path (hot/cold) analytical pipeline to stream simulated POS transaction data at 1,000 transactions/second.
-*   **Ingestion:** Implemented FastAPI Ingest API acts as a Kafka producer, sending events to Kafka topics.
-*   **Hot Path (OLAP):** Configured ClickHouse Kafka Engine to auto-ingest data from Kafka into ClickHouse MergeTree tables. Implemented 2 Materialized Views for hourly pre-aggregations, reducing OLAP query latency from 12s (PostgreSQL baseline) to sub-100ms on 10M+ records.
-*   **Cold Path (Lakehouse):** Used Kafka Connect S3 Sink to archive raw transactional events to MinIO in Parquet format, structured into Apache Iceberg table layouts.
-*   **Query Federation:** Integrated Trino as a federated query engine with dual catalogs (ClickHouse + Iceberg), enabling single-SQL JOIN queries across real-time and 30-day historical datasets without needing complex ETL routines.
-*   **Semantic Layer:** Implemented Cube.js semantic layer defining 4 core metrics (revenue, units_sold, average_basket_size, and transaction_count) with hourly pre-aggregations, exposing standardized REST APIs to a Grafana dashboard.
+- Architected a dual-path (hot/cold) FMCG analytical platform processing 1,000 POS transactions/second using Apache Kafka as the message broker, ClickHouse Kafka Engine for real-time OLAP ingestion, and Kafka Connect S3 Sink for historical archival.
+- Designed ClickHouse MergeTree schema with optimized ORDER BY index keys and monthly partitioning, implementing 2 Materialized Views for pre-aggregation, reducing OLAP query latency from 12s (PostgreSQL) to sub-100ms on 10M+ records.
+- Deployed Trino as a federated query engine with dual catalogs (ClickHouse JDBC + Hive Metastore), enabling single-SQL joins across real-time and historical Parquet datasets on MinIO without custom ETL scripts.
+- Implemented Cube.js semantic layer to define standardized business metrics (Revenue, Units Sold, Avg Basket) with caching, exposing a PostgreSQL-compatible interface consumed by Grafana dashboards.
 
-### **2. Hybrid Data Ingestion & Streaming Platform**
-*   **Ingestion:** Architected a hybrid ingestion platform combining real-time CDC (Debezium + Kafka) with REST batch APIs (FastAPI) to handle heterogeneous operational ingestion demands.
-*   **Deduplication:** Implemented idempotent write logic using composite business keys and `ROW_NUMBER()` window functions to eliminate duplicates from CDC streams.
-*   **Data Quality:** Designed a Medallion-structured dbt project, establishing schema and referential integrity tests across 5 dimension tables and 2 fact tables.
-*   **Monitoring:** Set up active Grafana dashboards monitoring Kafka consumer group lag, consumer rates, and database I/O.
+**Tech:** _Python • FastAPI • Apache Kafka • ClickHouse • MinIO • Apache Iceberg • Trino • Cube.js • Grafana • Docker_
 
-### **3. Retail Enterprise Data Platform**
-*   **Consolidation:** Aggregated operational data from 12 source systems (ERP, CRM, POS) into a GCP BigQuery central data warehouse.
-*   **Orchestration:** Authored complex Apache Airflow DAGs with custom operators to schedule and orchestrate dependency chains.
-*   **Governance:** Deployed OpenMetadata to establish an enterprise data catalog, map end-to-end data lineage, and automate schema documentation.
+**Hybrid Data Ingestion & Streaming Platform** _2025 - 2026_
 
-### **4. Banking Lakehouse & Platform Migration**
-*   **Migration:** Supported the migration of legacy ETL pipelines to Apache Spark (PySpark) and Delta Lake on Databricks.
-*   **Security:** Configured row-level and column-level access control and integrated data governance controls to meet banking compliance standards.
+**github.com/phatle224/hybrid-data-ingestion-streaming-platform**
 
----
+- Built a hybrid ELT platform combining real-time CDC (Debezium + Kafka) and batch ingestion (FastAPI portal) into PostgreSQL - processing ~120K insurance contracts with end-to-end CDC latency under 1.5 seconds and peak throughput of ~500 events/sec, solving the cold-start problem of offline-only data warehouses.
+- Designed a 4-layer Medallion dbt pipeline (Staging → Intermediate → Warehouse → Mart) with 54 automated data quality tests across 5 dimension and 2 fact tables.
+- Implemented idempotent deduplication using composite business keys and ROW_NUMBER() window functions to eliminate duplicate records from CDC streams.
+- Built observability dashboards with Prometheus and Grafana to monitor Kafka consumer lag, PostgreSQL metrics, and pipeline health.
 
-## 🎓 Education
+**Tech:** _Python • FastAPI • Apache Kafka • Debezium • dbt • PostgreSQL • Prometheus • Grafana • Docker_
 
-### **Bachelor of Science in Information Technology**
-*Ho Chi Minh City, Vietnam | Expected Graduation: 2027 (Available for Full-time work from July 2026)*
-*   **Academic Achievements:** Academic Excellence Scholarship for 3 consecutive semesters (HK1 2025, HK2 2025, HK1 2026).
-*   **GPA:** 3.4/4.0 (Top 10% of class)
+**EDUCATION**
 
----
+**Bachelor of Information Technology** _2022 - Present (Expected 2027)_
 
-## 📜 Certifications & Languages
+**Saigon University (SGU), Ho Chi Minh City**
 
-*   **IBM Data Engineering Professional Certificate** (Completed 2025)
-*   **HackerRank SQL (Advanced) Certificate** (Completed 2025)
-*   **Languages:** Vietnamese (Native), English (Professional Working Proficiency - B2)
+- Academic Excellence Scholarship - 3 consecutive semesters (HK1 2025 - HK1 2026). GPA: 7.4/10.
+- Relevant coursework: Database Systems, Data Structures & Algorithms, Big Data Technologies, Software Engineering.
+
+**CERTIFICATIONS**
+
+**IBM Data Engineering Professional Certificate - Coursera / IBM** _Apr 2025 - Present_
+
+**IBM Data Analyst Professional Certificate - Coursera / IBM** _Feb 2025_
+
+**SQL (Advanced) Certificate - HackerRank** _Dec_ _2025_
+
+**LANGUAGES**
+
+- **Vietnamese** Native
+- **English** B2 (IELTS in progress)
