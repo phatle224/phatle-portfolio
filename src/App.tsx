@@ -28,7 +28,7 @@ export default function App() {
       }
 
       // Track active section on scroll
-      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -129,6 +129,15 @@ export default function App() {
               </li>
               <li>
                 <button
+                  onClick={() => scrollTo('education')}
+                  className={`nav-link ${activeSection === 'education' ? 'active' : ''}`}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+                >
+                  Education
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => scrollTo('contact')}
                   className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
@@ -158,6 +167,7 @@ export default function App() {
           <button onClick={() => scrollTo('experience')} className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`} style={{ background: 'transparent', border: 'none', textAlign: 'left' }}>Experience</button>
           <button onClick={() => scrollTo('skills')} className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`} style={{ background: 'transparent', border: 'none', textAlign: 'left' }}>Skills</button>
           <button onClick={() => scrollTo('projects')} className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`} style={{ background: 'transparent', border: 'none', textAlign: 'left' }}>Projects</button>
+          <button onClick={() => scrollTo('education')} className={`nav-link ${activeSection === 'education' ? 'active' : ''}`} style={{ background: 'transparent', border: 'none', textAlign: 'left' }}>Education</button>
           <button onClick={() => scrollTo('contact')} className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} style={{ background: 'transparent', border: 'none', textAlign: 'left' }}>Contact</button>
         </div>
       )}
@@ -172,7 +182,7 @@ export default function App() {
               <span className="text-gradient-green-blue text-glow">Le Hong Phat</span>
             </h1>
             <p className="hero-desc">
-              I am a results-oriented Data Engineer specializing in real-time streaming architectures, high-performance OLAP systems, and automated data quality. I design, build, and optimize enterprise-scale data infrastructure to bridge the gap between raw telemetry and business decisions.
+              Data Engineer with 9 months of production experience at AFFINA Insurance, specializing in real-time CDC pipelines (Debezium + Kafka), dbt ELT platforms, and FMCG analytics architecture. I design, build, and optimize enterprise-scale data infrastructure to bridge the gap between raw operational data and business insight at scale.
             </p>
             <div className="hero-actions">
               <button onClick={() => scrollTo('projects')} className="btn btn-primary">
@@ -186,7 +196,7 @@ export default function App() {
               <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
-              <a href="https://linkedin.com/in/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/phat-le-674640330/" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               <a href="mailto:hongphatle224@gmail.com" className="social-circle-btn purple" aria-label="Email">
@@ -224,13 +234,13 @@ export default function App() {
           <div className="about-grid">
             <div className="about-text">
               <p>
-                I am a final-year Information Technology student (graduating and available for full-time work starting <strong>July 2026</strong>) with a strong foundation in modern data engineering principles.
+                I am a results-oriented Data Engineer with 9 months of production experience at <strong>AFFINA Insurance</strong>, specializing in real-time CDC pipelines (Debezium + Kafka), dbt ELT platforms, and FMCG analytics architecture. Currently pursuing my Bachelor of Information Technology at <strong>Saigon University</strong> (Expected graduation 2027).
               </p>
               <p>
-                My professional experience includes a 9-month tenure at <strong>AFFINA Insurance</strong>, where I developed and managed real-time CDC ingestion pipelines and dbt orchestration layers. I specialize in the modern open-source data stack, building scalable systems that handle high throughput while keeping latencies minimal.
+                At AFFINA Insurance, I built end-to-end data platforms reducing ingestion latency from batch-daily to under 2 seconds, resolved complex online-offline integration issues for 50+ contract variants, and engineered reliable, decoupled event-driven topologies with RabbitMQ.
               </p>
               <p>
-                I approach data platforms with an operations-first mindset: ensuring high data availability, enforcing strict quality guarantees, mapping lineages, and deploying real-time observability to ensure anomalies are detected in seconds rather than hours.
+                I approach data platforms with an operations-first mindset: ensuring high data availability, enforcing strict data quality guarantees (deploying 54+ automated tests), and implementing real-time observability to detect anomalies in seconds.
               </p>
             </div>
 
@@ -272,23 +282,23 @@ export default function App() {
               <div className="timeline-content glass-card">
                 <div className="timeline-header">
                   <div>
-                    <h3 className="timeline-role">Data Engineer</h3>
+                    <h3 className="timeline-role">Data Engineer Intern</h3>
                     <div className="timeline-company">AFFINA Insurance</div>
                   </div>
-                  <span className="timeline-date">Oct 2025 - Present (9 Mos)</span>
+                  <span className="timeline-date">Sep 2025 - May 2026 (9 Mos)</span>
                 </div>
                 <ul className="timeline-bullets">
                   <li>
-                    <strong>Real-time CDC Pipelines:</strong> Architected and deployed CDC pipelines using Debezium and Kafka Connect, streaming changes from 3 source PostgreSQL databases to a centralized analytics repository with sub-2s latency and zero message loss.
+                    <strong>Data Platform Architecture (Phase 1):</strong> Built the end-to-end data platform capturing real-time MySQL CDC events via Debezium and scheduled Excel data, consolidating them into staging tables and normalized marts with under 2-second ingestion latency.
                   </li>
                   <li>
-                    <strong>dbt & Data Quality:</strong> Built and optimized a 4-layer Medallion (Bronze → Silver → Gold → Mart) dbt pipeline consolidating 5+ data sources (relational databases, flat files, REST APIs) into the analytics warehouse. Developed 54 automated quality tests, enforcing strict constraints for 99%+ schema-level accuracy.
+                    <strong>Enterprise Data Consolidation (Phase 2):</strong> Evolved the platform to resolve complex online-offline data integration issues; implemented custom Contract Pre-Processing and a Policy Parser to standardize schema discrepancies (e.g., splitting multi-insured contracts, mapping default beneficiaries), standardizing data across 50+ contract variants and enabling consistent policy reporting across business units.
                   </li>
                   <li>
-                    <strong>Infrastructure Observability:</strong> Set up end-to-end monitoring using Prometheus & Grafana to track Kafka consumer group lag and database performance, lowering average incident detection times from hours to under 5 minutes.
+                    <strong>Idempotency & Deduplication:</strong> Designed a real-time deduplication component utilizing Redis Contract Caching to track and validate record uniqueness, ensuring zero data loss and exact-once insertion into the Operational Data Store.
                   </li>
                   <li>
-                    <strong>Cross-functional Teamwork:</strong> Collaborated directly with Business Analysts and Business Units to translate operational workflows into clean, queryable dimensional models (Star Schemas), accelerating monthly reporting intervals.
+                    <strong>Event-Driven Architecture:</strong> Designed RabbitMQ event routing topology for 5 downstream consumer applications, implementing at-least-once delivery semantics and decoupling the core data platform from business-layer consumers - enabling independent scaling of each processing pipeline.
                   </li>
                 </ul>
               </div>
@@ -322,7 +332,7 @@ export default function App() {
 
                 <div>
                   <div className="skill-info">
-                    <span className="skill-name">OLAP & Data Warehousing (ClickHouse, PostgreSQL)</span>
+                    <span className="skill-name">OLAP & Lakehouse (ClickHouse, Trino, Iceberg)</span>
                     <span className="skill-pct">92%</span>
                   </div>
                   <div className="progress-track">
@@ -332,7 +342,7 @@ export default function App() {
 
                 <div>
                   <div className="skill-info">
-                    <span className="skill-name">Transformation & Modelling (dbt, Airflow, PySpark)</span>
+                    <span className="skill-name">Transformation & Orchestration (dbt, Airflow, PySpark)</span>
                     <span className="skill-pct">88%</span>
                   </div>
                   <div className="progress-track">
@@ -352,7 +362,7 @@ export default function App() {
 
                 <div>
                   <div className="skill-info">
-                    <span className="skill-name">DevOps & Observability (Docker, K8s, Grafana)</span>
+                    <span className="skill-name">Infrastructure & Monitoring (Docker, Prometheus, Grafana)</span>
                     <span className="skill-pct">85%</span>
                   </div>
                   <div className="progress-track">
@@ -383,10 +393,14 @@ export default function App() {
                   <div className="tech-name">SQL</div>
                 </div>
                 <div className="tech-card">
-                  <div className="tech-icon">
-                    <img src="/java.svg" alt="Java" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                  <div className="tech-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--aurora-green)' }}>
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                      <path d="M3 12A9 3 0 0 0 21 12"></path>
+                    </svg>
                   </div>
-                  <div className="tech-name">Java</div>
+                  <div className="tech-name">Trino</div>
                 </div>
                 <div className="tech-card">
                   <div className="tech-icon">
@@ -468,7 +482,7 @@ export default function App() {
                   <h3 className="project-title">FMCG Real-Time Analytics Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Designed a dual-path (hot/cold) data lakehouse. POS simulated events (1k/s) flow via FastAPI and Apache Kafka. The hot path aggregates in ClickHouse using Materialized Views to achieve sub-100ms analytics queries. The cold path uses Kafka Connect S3 Sink to MinIO, querying raw data in Apache Iceberg format. Trino bridges both paths via SQL. Cube.js serves as the semantic layer, exposing business metrics to a custom Grafana dashboard.
+                  Architected a dual-path (hot/cold) FMCG analytical platform processing 1,000 POS transactions/second. Features real-time ingestion in ClickHouse with Materialized Views, reducing query latencies on 10M+ records to sub-100ms. Integrates historical data via Trino over Iceberg datasets on MinIO, and a Cube.js semantic layer serving Prometheus/Grafana.
                 </p>
                 <div className="project-tags">
                   <span className="badge">ClickHouse</span>
@@ -480,7 +494,7 @@ export default function App() {
                   <span className="badge">Grafana</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/phatle224/fmcg-realtime-analytics-platform" target="_blank" rel="noopener noreferrer" className="project-link">
+                  <a href="https://github.com/phatle224/fmcg-real-time-analytics" target="_blank" rel="noopener noreferrer" className="project-link">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
@@ -498,7 +512,7 @@ export default function App() {
                   <h3 className="project-title">Hybrid Data Ingestion & Streaming Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Integrated real-time database replication (CDC using Debezium and Kafka) with batch payloads from FastAPI endpoints. Implemented idempotent loading mechanics utilizing compound business keys and deduplication windowing to clean operational streams. Directed a multi-tier dbt project validating dimension integrity via schema and integration testing, and monitored consumer lag via Grafana.
+                  Built a hybrid ELT platform capturing database modifications (CDC Debezium + Kafka) and batch FastAPI submissions into PostgreSQL. Processes ~120K insurance contracts with under 1.5s CDC latency and peak throughput of ~500 events/sec. Employs a 4-layer Medallion dbt pipeline with 54 automated data quality tests.
                 </p>
                 <div className="project-tags">
                   <span className="badge">Debezium</span>
@@ -507,9 +521,10 @@ export default function App() {
                   <span className="badge">PostgreSQL</span>
                   <span className="badge">dbt</span>
                   <span className="badge">Prometheus</span>
+                  <span className="badge">Grafana</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/phatle224/Hybrid-Data-Ingestion-Streaming-Platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                  <a href="https://github.com/phatle224/hybrid-data-ingestion-streaming-platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
@@ -577,6 +592,90 @@ export default function App() {
         </div>
       </section>
 
+      {/* Education & Credentials Section */}
+      <section id="education" className="section">
+        <div className="container">
+          <div className="section-title-wrap">
+            <span className="section-tag">Credentials</span>
+            <h2 className="section-title">Education & Certifications</h2>
+          </div>
+
+          <div className="grid-2">
+            {/* Education Card */}
+            <div className="glass-card" style={{ padding: '32px' }}>
+              <h3 className="category-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-light)', marginBottom: '24px' }}>
+                <Award size={24} style={{ color: 'var(--aurora-green)' }} /> Education
+              </h3>
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: '700', color: 'var(--text-normal)' }}>Saigon University (SGU)</h4>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', background: 'var(--border-color)', padding: '4px 10px', borderRadius: '12px' }}>2022 - Present (Expected 2027)</span>
+                </div>
+                <div style={{ color: 'var(--text-light)', fontWeight: '500', fontSize: '0.95rem', marginTop: '4px' }}>Bachelor of Information Technology</div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '2px' }}>Ho Chi Minh City, Vietnam</div>
+              </div>
+              
+              <div style={{ marginTop: '20px' }}>
+                <h5 style={{ fontWeight: '600', color: 'var(--text-normal)', fontSize: '0.95rem', marginBottom: '8px' }}>Academic Achievements & Coursework:</h5>
+                <ul className="timeline-bullets" style={{ margin: 0, paddingLeft: '20px' }}>
+                  <li>
+                    <strong>Academic Excellence Scholarship:</strong> Awarded for 3 consecutive semesters (HK1 2025 - HK1 2026). GPA: 7.4/10.
+                  </li>
+                  <li>
+                    <strong>Relevant Coursework:</strong> Database Systems, Data Structures & Algorithms, Big Data Technologies, Software Engineering.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Certifications & Languages Card */}
+            <div className="glass-card" style={{ padding: '32px' }}>
+              <h3 className="category-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-light)', marginBottom: '24px' }}>
+                <FileText size={24} style={{ color: 'var(--aurora-blue)' }} /> Certifications & Languages
+              </h3>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+                  <div>
+                    <div style={{ fontWeight: '700', color: 'var(--text-normal)' }}>IBM Data Engineering Professional Certificate</div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Coursera / IBM</div>
+                  </div>
+                  <span style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', color: 'var(--text-muted)' }}>Apr 2025 - Present</span>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+                  <div>
+                    <div style={{ fontWeight: '700', color: 'var(--text-normal)' }}>IBM Data Analyst Professional Certificate</div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Coursera / IBM</div>
+                  </div>
+                  <span style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', color: 'var(--text-muted)' }}>Feb 2025</span>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+                  <div>
+                    <div style={{ fontWeight: '700', color: 'var(--text-normal)' }}>SQL (Advanced) Certificate</div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>HackerRank</div>
+                  </div>
+                  <span style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', color: 'var(--text-muted)' }}>Dec 2025</span>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '24px', borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
+                <h5 style={{ fontWeight: '600', color: 'var(--text-normal)', fontSize: '0.95rem', marginBottom: '12px' }}>Languages:</h5>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                  <div style={{ background: 'var(--border-color)', padding: '6px 12px', borderRadius: '8px', fontSize: '0.9rem' }}>
+                    <strong style={{ color: 'var(--text-normal)' }}>Vietnamese:</strong> <span style={{ color: 'var(--text-light)' }}>Native</span>
+                  </div>
+                  <div style={{ background: 'var(--border-color)', padding: '6px 12px', borderRadius: '8px', fontSize: '0.9rem' }}>
+                    <strong style={{ color: 'var(--text-normal)' }}>English:</strong> <span style={{ color: 'var(--text-light)' }}>B2 (IELTS in progress)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="section">
         <div className="container">
@@ -589,7 +688,7 @@ export default function App() {
             <div className="contact-info">
               <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Let's build something scalable.</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-                I am currently looking for full-time Data Engineer opportunities (available from July 2026). If you want to talk about CDC pipeline optimization, ClickHouse query patterns, or just grab a coffee, feel free to reach out!
+                I am currently looking for full-time/hybrid Data Engineer opportunities. If you want to talk about CDC pipeline optimization, ClickHouse query patterns, or just grab a coffee, feel free to reach out!
               </p>
 
               <div className="contact-item" style={{ marginTop: '20px' }}>
@@ -618,7 +717,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="contact-label">Availability</div>
-                  <div className="contact-value">Immediate Full-time/Hybrid (July 2026 onwards)</div>
+                  <div className="contact-value">Immediate Full-time/Hybrid (Expected graduation 2027)</div>
                 </div>
               </div>
             </div>
@@ -653,7 +752,7 @@ export default function App() {
             <a href="https://github.com/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn" aria-label="GitHub">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
-            <a href="https://linkedin.com/in/phatle224" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/phat-le-674640330/" target="_blank" rel="noopener noreferrer" className="social-circle-btn blue" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
             <a href="mailto:hongphatle224@gmail.com" className="social-circle-btn purple" aria-label="Email">
