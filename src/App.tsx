@@ -10,7 +10,8 @@ import {
   FileText,
   ChevronRight,
   Award,
-  Cpu
+  Cpu,
+  Shield
 } from 'lucide-react';
 
 export default function App() {
@@ -525,6 +526,36 @@ export default function App() {
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/hybrid-data-ingestion-streaming-platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3: Data Platform Governance */}
+            <div className="glass-card project-card">
+              <div className="project-visual">
+                <Shield className="project-visual-icon" size={56} />
+                <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Governance & Obs</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">Data Platform Governance & Observability</h3>
+                </div>
+                <p className="project-desc">
+                  Deployed an enterprise-grade governance and observability stack as a companion repository for the FMCG Analytics platform. Automatically catalogs PostgreSQL, ClickHouse, and Trino schemas using OpenMetadata. Tracks data lineage from raw to aggregated marts using OpenLineage during scheduled Apache Airflow dbt runs. Integrates Prometheus and AlertManager to route real-time pipeline SLO breach alerts to Slack, and aggregates container logs via Loki & Promtail.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">OpenMetadata</span>
+                  <span className="badge">OpenLineage</span>
+                  <span className="badge">Apache Airflow</span>
+                  <span className="badge">dbt</span>
+                  <span className="badge">Prometheus</span>
+                  <span className="badge">Grafana Loki</span>
+                  <span className="badge">Docker</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/data-platform-governance" target="_blank" rel="noopener noreferrer" className="project-link">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>

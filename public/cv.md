@@ -52,6 +52,17 @@ Data Engineer with 9 months of production experience at AFFINA Insurance, specia
 
 **Tech:** _Python • FastAPI • Apache Kafka • Debezium • dbt • PostgreSQL • Prometheus • Grafana • Docker_
 
+**Data Platform Governance & Observability** _2026_
+
+**github.com/phatle224/data-platform-governance**
+
+- Implemented automated metadata cataloging and schema discovery across PostgreSQL, ClickHouse, and Trino using OpenMetadata connected via a shared Docker network.
+- Enabled end-to-end data lineage tracking from raw source tables to staging views and aggregated marts by capturing OpenLineage events during scheduled Apache Airflow dbt runs.
+- Built pipeline SLO monitoring and threshold-based alerting by exporting Airflow StatsD metrics to Prometheus and routing critical alerts to Slack via AlertManager within 30 seconds.
+- Configured centralized logging using Grafana Loki and Promtail to auto-discover and tag logs from 14+ services across projects, reducing debugging time through unified LogQL dashboards.
+
+**Tech:** _OpenMetadata • OpenLineage • Apache Airflow • dbt • PostgreSQL • Prometheus • Grafana Loki • Promtail • Docker_
+
 **EDUCATION**
 
 **Bachelor of Information Technology** _2022 - Present (Expected 2027)_
