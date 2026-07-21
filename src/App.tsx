@@ -11,13 +11,29 @@ import {
   ChevronRight,
   Award,
   Cpu,
-  Shield
+  Shield,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export default function App() {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState('home');
+  const [theme, setTheme] = React.useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+    return 'light';
+  });
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
 
   // Handle navbar background change on scroll
   React.useEffect(() => {
@@ -71,7 +87,7 @@ export default function App() {
       {/* Sticky Header / Navigation */}
       <header className="header" style={{
         borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
-        background: scrolled ? 'rgba(252, 250, 244, 0.85)' : 'rgba(252, 250, 244, 0.4)'
+        background: scrolled ? 'var(--header-bg-scrolled)' : 'var(--header-bg-top)'
       }}>
         <div className="container header-container">
           <div className="logo cursor-pointer" onClick={() => scrollTo('home')}>
@@ -149,14 +165,26 @@ export default function App() {
             </ul>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Header Action Controls */}
+          <div className="header-actions">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle-btn"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -189,7 +217,7 @@ export default function App() {
               <button onClick={() => scrollTo('projects')} className="btn btn-primary">
                 Explore Projects <ChevronRight size={18} />
               </button>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <a href="/resume_v2.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                 View PDF CV <FileText size={18} />
               </a>
             </div>
@@ -293,7 +321,7 @@ export default function App() {
                     <strong>Data Platform Architecture (Phase 1):</strong> Built the end-to-end data platform capturing real-time MySQL CDC events via Debezium and scheduled Excel data, consolidating them into staging tables and normalized marts with under 2-second ingestion latency.
                   </li>
                   <li>
-                    <strong>Enterprise Data Consolidation (Phase 2):</strong> Evolved the platform to resolve complex online-offline data integration issues; implemented custom Contract Pre-Processing and a Policy Parser to standardize schema discrepancies (e.g., splitting multi-insured contracts, mapping default beneficiaries), standardizing data across 50+ contract variants and enabling consistent policy reporting across business units.
+                    <strong>Enterprise Data Consolidation (Phase 2):</strong> Evolved the platform to resolve complex online-offline data integration issues. Implemented a custom Contract Pre-Processing and Policy Parser to standardize schema discrepancies across 50+ contract variants, enabling consistent policy reporting.
                   </li>
                   <li>
                     <strong>Idempotency & Deduplication:</strong> Designed a real-time deduplication component utilizing Redis Contract Caching to track and validate record uniqueness, ensuring zero data loss and exact-once insertion into the Operational Data Store.
@@ -645,7 +673,7 @@ export default function App() {
                 <div style={{ color: 'var(--text-light)', fontWeight: '500', fontSize: '0.95rem', marginTop: '4px' }}>Bachelor of Information Technology</div>
                 <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '2px' }}>Ho Chi Minh City, Vietnam</div>
               </div>
-              
+
               <div style={{ marginTop: '20px' }}>
                 <h5 style={{ fontWeight: '600', color: 'var(--text-normal)', fontSize: '0.95rem', marginBottom: '8px' }}>Academic Achievements & Coursework:</h5>
                 <ul className="timeline-bullets" style={{ margin: 0, paddingLeft: '20px' }}>
@@ -664,7 +692,7 @@ export default function App() {
               <h3 className="category-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-light)', marginBottom: '24px' }}>
                 <FileText size={24} style={{ color: 'var(--aurora-blue)' }} /> Certifications & Languages
               </h3>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
                   <div>
