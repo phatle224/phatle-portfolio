@@ -209,7 +209,7 @@ export default function App() {
           <div className="hero-visual">
             <div className="avatar-container">
               <div className="avatar-inner">
-                <img src="/avatar.jpg" alt="Le Hong Phat" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                <img src="/avatar.png" alt="Le Hong Phat" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
             </div>
             <div className="hero-glow"></div>
