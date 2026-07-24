@@ -217,7 +217,7 @@ export default function App() {
               <button onClick={() => scrollTo('projects')} className="btn btn-primary">
                 Explore Projects <ChevronRight size={18} />
               </button>
-              <a href="/resume_v2.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <a href="/resume_v3.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                 View PDF CV <FileText size={18} />
               </a>
             </div>
