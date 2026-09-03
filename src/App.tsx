@@ -13,7 +13,8 @@ import {
   Cpu,
   Shield,
   Sun,
-  Moon
+  Moon,
+  Workflow
 } from 'lucide-react';
 
 export default function App() {
@@ -361,7 +362,7 @@ export default function App() {
 
                 <div>
                   <div className="skill-info">
-                    <span className="skill-name">OLAP & Lakehouse (ClickHouse, Trino, Iceberg)</span>
+                    <span className="skill-name">OLAP & Lakehouse (ClickHouse, Trino, Delta Lake, Spark)</span>
                     <span className="skill-pct">92%</span>
                   </div>
                   <div className="progress-track">
@@ -560,7 +561,38 @@ export default function App() {
               </div>
             </div>
 
-            {/* Project 3: Data Platform Governance */}
+            {/* Project 3: PitchFlow Data Lakehouse */}
+            <div className="glass-card project-card purple-hover">
+              <div className="project-visual purple">
+                <Workflow className="project-visual-icon" size={56} />
+                <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Delta Lakehouse & Spark</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">PitchFlow: Reliable Football Data Lakehouse</h3>
+                </div>
+                <p className="project-desc">
+                  Architected a local, production-grade football data lakehouse implementing Medallion Architecture (Bronze–Silver–Gold Delta tables on MinIO) over pinned StatsBomb Premier League 2015/16 event data (380 matches, millions of events). Features controlled chaos testing (Quarantine routing for malformed/duplicate records), idempotent Delta merges & PostgreSQL serving projections, orchestrated end-to-end via Apache Airflow with Metabase analytics dashboards.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">Apache Spark</span>
+                  <span className="badge">Delta Lake</span>
+                  <span className="badge">Apache Airflow</span>
+                  <span className="badge">MinIO (S3)</span>
+                  <span className="badge">PostgreSQL</span>
+                  <span className="badge">Metabase</span>
+                  <span className="badge">Python</span>
+                  <span className="badge">Docker</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/pitchflow-reliable-football-data-lakehouse" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 4: Data Platform Governance */}
             <div className="glass-card project-card">
               <div className="project-visual">
                 <Shield className="project-visual-icon" size={56} />
