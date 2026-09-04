@@ -14,7 +14,8 @@ import {
   Shield,
   Sun,
   Moon,
-  Workflow
+  Workflow,
+  Pin
 } from 'lucide-react';
 
 export default function App() {
@@ -501,67 +502,7 @@ export default function App() {
           </div>
 
           <div className="grid-2">
-            {/* Project 1 */}
-            <div className="glass-card project-card">
-              <div className="project-visual">
-                <Database className="project-visual-icon" size={56} />
-                <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Real-time OLAP</div>
-              </div>
-              <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">FMCG Real-Time Analytics Platform</h3>
-                </div>
-                <p className="project-desc">
-                  Architected a dual-path (hot/cold) FMCG analytical platform processing 1,000 POS transactions/second. Features real-time ingestion in ClickHouse with Materialized Views, reducing query latencies on 10M+ records to sub-100ms. Integrates historical data via Trino over Iceberg datasets on MinIO, and a Cube.js semantic layer serving Prometheus/Grafana.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">ClickHouse</span>
-                  <span className="badge">Kafka</span>
-                  <span className="badge">Trino</span>
-                  <span className="badge">Apache Iceberg</span>
-                  <span className="badge">Cube.js</span>
-                  <span className="badge">MinIO</span>
-                  <span className="badge">Grafana</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/phatle224/fmcg-real-time-analytics" target="_blank" rel="noopener noreferrer" className="project-link">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="glass-card project-card blue-hover">
-              <div className="project-visual blue">
-                <TrendingUp className="project-visual-icon" size={56} />
-                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Streaming + CDC</div>
-              </div>
-              <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">Hybrid Data Ingestion & Streaming Platform</h3>
-                </div>
-                <p className="project-desc">
-                  Built a hybrid ELT platform capturing database modifications (CDC Debezium + Kafka) and batch FastAPI submissions into PostgreSQL. Processes ~120K insurance contracts with under 1.5s CDC latency and peak throughput of ~500 events/sec. Employs a 4-layer Medallion dbt pipeline with 54 automated data quality tests.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">Debezium</span>
-                  <span className="badge">Kafka</span>
-                  <span className="badge">FastAPI</span>
-                  <span className="badge">PostgreSQL</span>
-                  <span className="badge">dbt</span>
-                  <span className="badge">Prometheus</span>
-                  <span className="badge">Grafana</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/phatle224/hybrid-data-ingestion-streaming-platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3: PitchFlow Data Lakehouse */}
+            {/* Project 1: PitchFlow Data Lakehouse */}
             <div className="glass-card project-card purple-hover">
               <div className="project-visual purple">
                 <Workflow className="project-visual-icon" size={56} />
@@ -592,7 +533,37 @@ export default function App() {
               </div>
             </div>
 
-            {/* Project 4: Data Platform Governance */}
+            {/* Project 2: Hybrid Data Ingestion & Streaming Platform */}
+            <div className="glass-card project-card blue-hover">
+              <div className="project-visual blue">
+                <TrendingUp className="project-visual-icon" size={56} />
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Streaming + CDC</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">Hybrid Data Ingestion & Streaming Platform</h3>
+                </div>
+                <p className="project-desc">
+                  Built a hybrid ELT platform capturing database modifications (CDC Debezium + Kafka) and batch FastAPI submissions into PostgreSQL. Processes ~120K insurance contracts with under 1.5s CDC latency and peak throughput of ~500 events/sec. Employs a 4-layer Medallion dbt pipeline with 54 automated data quality tests.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">Debezium</span>
+                  <span className="badge">Kafka</span>
+                  <span className="badge">FastAPI</span>
+                  <span className="badge">PostgreSQL</span>
+                  <span className="badge">dbt</span>
+                  <span className="badge">Prometheus</span>
+                  <span className="badge">Grafana</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/hybrid-data-ingestion-streaming-platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3: Data Platform Governance & Observability */}
             <div className="glass-card project-card">
               <div className="project-visual">
                 <Shield className="project-visual-icon" size={56} />
@@ -621,8 +592,48 @@ export default function App() {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Project 5: Agent SQL */}
+          {/* Pinned / Other Projects Sub-Section */}
+          <div className="section-title-wrap" style={{ marginTop: '64px', marginBottom: '36px' }}>
+            <span className="section-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Pin size={14} /> Pinned Repositories
+            </span>
+            <h3 className="section-title" style={{ fontSize: '2rem' }}>Other Pinned Projects</h3>
+          </div>
+
+          <div className="grid-2">
+            {/* Pinned Project 1: FMCG Real-Time Analytics Platform */}
+            <div className="glass-card project-card">
+              <div className="project-visual">
+                <Database className="project-visual-icon" size={56} />
+                <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Real-time OLAP</div>
+              </div>
+              <div className="project-body">
+                <div className="project-header-wrap">
+                  <h3 className="project-title">FMCG Real-Time Analytics Platform</h3>
+                </div>
+                <p className="project-desc">
+                  Architected a dual-path (hot/cold) FMCG analytical platform processing 1,000 POS transactions/second. Features real-time ingestion in ClickHouse with Materialized Views, reducing query latencies on 10M+ records to sub-100ms. Integrates historical data via Trino over Iceberg datasets on MinIO, and a Cube.js semantic layer serving Prometheus/Grafana.
+                </p>
+                <div className="project-tags">
+                  <span className="badge">ClickHouse</span>
+                  <span className="badge">Kafka</span>
+                  <span className="badge">Trino</span>
+                  <span className="badge">Apache Iceberg</span>
+                  <span className="badge">Cube.js</span>
+                  <span className="badge">MinIO</span>
+                  <span className="badge">Grafana</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/fmcg-real-time-analytics" target="_blank" rel="noopener noreferrer" className="project-link">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Pinned Project 2: Agent SQL (NL2SQL Platform) */}
             <div className="glass-card project-card blue-hover">
               <div className="project-visual blue">
                 <Terminal className="project-visual-icon" size={56} />
@@ -651,7 +662,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Project 6: AI FOR EDUCATION */}
+            {/* Pinned Project 3: AI FOR EDUCATION */}
             <div className="glass-card project-card purple-hover">
               <div className="project-visual purple">
                 <Cpu className="project-visual-icon" size={56} />
