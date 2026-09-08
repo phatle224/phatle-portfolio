@@ -537,23 +537,24 @@ export default function App() {
             <div className="glass-card project-card blue-hover">
               <div className="project-visual blue">
                 <TrendingUp className="project-visual-icon" size={56} />
-                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Streaming + CDC</div>
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Hybrid ELT Platform</div>
               </div>
               <div className="project-body">
                 <div className="project-header-wrap">
                   <h3 className="project-title">Hybrid Data Ingestion & Streaming Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Built a hybrid ELT platform capturing database modifications (CDC Debezium + Kafka) and batch FastAPI submissions into PostgreSQL. Processes ~120K insurance contracts with under 1.5s CDC latency and peak throughput of ~500 events/sec. Employs a 4-layer Medallion dbt pipeline with 54 automated data quality tests.
+                  Unified real-time contract changes from the sales database with offline Excel reports from partners and administrators in a centralized insurance analytics platform. Built a hybrid ELT pipeline using Debezium, Kafka, and FastAPI ingestion into PostgreSQL, then designed a 4-layer Medallion dbt pipeline (Staging → Intermediate → Warehouse → Mart) with 54 automated data quality tests across 5 dimensions and 2 facts. Cross-channel deduplication uses composite business keys and ROW_NUMBER() so official online records take precedence over duplicate offline submissions.
                 </p>
                 <div className="project-tags">
+                  <span className="badge">Python</span>
                   <span className="badge">Debezium</span>
                   <span className="badge">Kafka</span>
                   <span className="badge">FastAPI</span>
                   <span className="badge">PostgreSQL</span>
                   <span className="badge">dbt</span>
-                  <span className="badge">Prometheus</span>
-                  <span className="badge">Grafana</span>
+                  <span className="badge">React</span>
+                  <span className="badge">TypeScript</span>
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/hybrid-data-ingestion-streaming-platform" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
@@ -633,26 +634,29 @@ export default function App() {
               </div>
             </div>
 
-            {/* Pinned Project 2: Agent SQL (NL2SQL Platform) */}
+            {/* Pinned Project 2: Agent SQL (Multi-Source NL2SQL Platform) */}
             <div className="glass-card project-card blue-hover">
               <div className="project-visual blue">
                 <Terminal className="project-visual-icon" size={56} />
-                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>AI Agents & NL2SQL</div>
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Multi-Source NL2SQL</div>
               </div>
               <div className="project-body">
                 <div className="project-header-wrap">
-                  <h3 className="project-title">Agent SQL (NL2SQL Platform)</h3>
+                  <h3 className="project-title">Agent SQL — Multi-Source NL2SQL Analytics Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Co-developed a production-ready NL2SQL platform powered by AI Agents. Translates natural language queries into secure SQL executions. Built with a microservices architecture featuring `nl2sql-service` for prompt mapping and `query-service` for safe, audited database executions with strict protection against prompt injection and hallucinations.
+                  Enabled non-technical users to explore fragmented data sources with natural-language questions instead of manually writing SQL. Built a FastAPI query service to validate, sanitize, route, and execute queries across PostgreSQL, MySQL, MongoDB, SQLite, DuckDB, and imported datasets. The Next.js and TypeScript dashboard manages data connections, supports natural-language and manual SQL queries, and presents results through interactive tables and charts.
                 </p>
                 <div className="project-tags">
                   <span className="badge">Python</span>
                   <span className="badge">FastAPI</span>
-                  <span className="badge">OpenAI API</span>
+                  <span className="badge">MySQL</span>
+                  <span className="badge">MongoDB</span>
                   <span className="badge">PostgreSQL</span>
+                  <span className="badge">SQLite</span>
+                  <span className="badge">DuckDB</span>
                   <span className="badge">React</span>
-                  <span className="badge">Docker</span>
+                  <span className="badge">TypeScript</span>
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/Agent_SQL" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
