@@ -725,7 +725,7 @@ export default function App() {
                 <h5 style={{ fontWeight: '600', color: 'var(--text-normal)', fontSize: '0.95rem', marginBottom: '8px' }}>Academic Achievements & Coursework:</h5>
                 <ul className="timeline-bullets" style={{ margin: 0, paddingLeft: '20px' }}>
                   <li>
-                    <strong>Academic Excellence Scholarship:</strong> Awarded for 3 consecutive semesters (HK1 2025 - HK1 2026). GPA: 7.4/10.
+                    <strong>Academic Excellence Scholarship:</strong> Awarded for 3 consecutive semesters (HK1 2025 - HK1 2026). GPA: 7.5/10.
                   </li>
                   <li>
                     <strong>Relevant Coursework:</strong> Database Systems, Data Structures & Algorithms, Big Data Technologies, Software Engineering.
@@ -746,7 +746,7 @@ export default function App() {
                     <div style={{ fontWeight: '700', color: 'var(--text-normal)' }}>IBM Data Engineering Professional Certificate</div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Coursera / IBM</div>
                   </div>
-                  <span style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', color: 'var(--text-muted)' }}>Apr 2025 - Present</span>
+                  <span style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', color: 'var(--text-muted)' }}>Sep 2025</span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
