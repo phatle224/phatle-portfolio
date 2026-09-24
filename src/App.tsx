@@ -268,10 +268,10 @@ export default function App() {
                 I am a results-oriented Data Engineer with 9 months of production experience at <strong>AFFINA Insurance</strong>, specializing in real-time CDC pipelines (Debezium + Kafka), dbt ELT platforms, and FMCG analytics architecture. Currently pursuing my Bachelor of Information Technology at <strong>Saigon University</strong> (Expected graduation 2027).
               </p>
               <p>
-                At AFFINA Insurance, I built end-to-end data platforms reducing ingestion latency from batch-daily to under 2 seconds, resolved complex online-offline integration issues for 50+ contract variants, and engineered reliable, decoupled event-driven topologies with RabbitMQ.
+                At AFFINA Insurance, I implemented a CDC-to-staging/reporting path with Debezium and Kafka, built a FastAPI Excel ingestion flow for seven offline insurance groups, standardized heterogeneous schemas, and integrated RabbitMQ event publishing for downstream consumers.
               </p>
               <p>
-                I approach data platforms with an operations-first mindset: ensuring high data availability, enforcing strict data quality guarantees (deploying 54+ automated tests), and implementing real-time observability to detect anomalies in seconds.
+                I approach data platforms with an operations-first mindset: validating canonical fields before staging writes, making event flows observable, and documenting data-quality checks and known limitations.
               </p>
             </div>
 
@@ -281,16 +281,16 @@ export default function App() {
                 <div className="stat-label">Months Experience</div>
               </div>
               <div className="glass-card stat-card blue-hover">
-                <div className="stat-number text-gradient-blue-purple">1,000+</div>
-                <div className="stat-label">Ingest events/sec</div>
+                <div className="stat-number text-gradient-blue-purple">21</div>
+                <div className="stat-label">Hybrid dbt Models</div>
               </div>
               <div className="glass-card stat-card purple-hover">
-                <div className="stat-number" style={{ color: 'var(--aurora-purple)' }}>54+</div>
-                <div className="stat-label">dbt Quality Tests</div>
+                <div className="stat-number" style={{ color: 'var(--aurora-purple)' }}>101</div>
+                <div className="stat-label">Configured dbt Tests</div>
               </div>
               <div className="glass-card stat-card">
-                <div className="stat-number text-gradient-rainbow">99%+</div>
-                <div className="stat-label">Data Accuracy</div>
+                <div className="stat-number text-gradient-rainbow">4</div>
+                <div className="stat-label">ELT Layers</div>
               </div>
             </div>
           </div>
@@ -320,16 +320,16 @@ export default function App() {
                 </div>
                 <ul className="timeline-bullets">
                   <li>
-                    <strong>Data Platform Architecture (Phase 1):</strong> Built the end-to-end data platform capturing real-time MySQL CDC events via Debezium and scheduled Excel data, consolidating them into staging tables and normalized marts with under 2-second ingestion latency.
+                    <strong>CDC Data Platform:</strong> Implemented the MySQL CDC path with Debezium/Kafka and Python consumers from source topics through staging and reporting writes, handling insert, update, and delete events with schema-aware upserts.
                   </li>
                   <li>
-                    <strong>Enterprise Data Consolidation (Phase 2):</strong> Evolved the platform to resolve complex online-offline data integration issues. Implemented a custom Contract Pre-Processing and Policy Parser to standardize schema discrepancies across 50+ contract variants, enabling consistent policy reporting.
+                    <strong>Excel Ingestion & Standardization:</strong> Built a FastAPI upload flow for seven offline insurance groups, using type-specific mappings and processors to normalize headers, dates, amounts, payer/insured fields, and validate business fields before staging writes.
                   </li>
                   <li>
-                    <strong>Idempotency & Deduplication:</strong> Designed a real-time deduplication component utilizing Redis Contract Caching to track and validate record uniqueness, ensuring zero data loss and exact-once insertion into the Operational Data Store.
+                    <strong>Redis Deduplication:</strong> Implemented duplicate handling that evolved from a four-field helper to normalized seven-field keys (`contractId`, `peopleName/name`, `majorName`, `companyProviderName`, `startDate`, `endDate`, `feeInsurance`), with online records taking precedence; the final cross-channel rule was later expressed with dbt `ROW_NUMBER()`.
                   </li>
                   <li>
-                    <strong>Event-Driven Architecture:</strong> Designed RabbitMQ event routing topology for 5 downstream consumer applications, implementing at-least-once delivery semantics and decoupling the core data platform from business-layer consumers - enabling independent scaling of each processing pipeline.
+                    <strong>Event-Driven Integration:</strong> Implemented the RabbitMQ publisher and topology with a topic exchange, durable `doc_ocr_queue`, dead-letter queue, persistent JSON messages, and reconnect/retry handling; downstream OCR consumption was outside this repository.
                   </li>
                 </ul>
               </div>
@@ -502,31 +502,32 @@ export default function App() {
           </div>
 
           <div className="grid-2">
-            {/* Project 1: PitchFlow Data Lakehouse */}
-            <div className="glass-card project-card purple-hover">
-              <div className="project-visual purple">
-                <Workflow className="project-visual-icon" size={56} />
-                <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Delta Lakehouse & Spark</div>
+            {/* Project 1: InsightMesh (Privacy-Bounded NL2SQL Platform) */}
+            <div className="glass-card project-card blue-hover">
+              <div className="project-visual blue">
+                <Terminal className="project-visual-icon" size={56} />
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Privacy-Bounded NL2SQL</div>
               </div>
               <div className="project-body">
                 <div className="project-header-wrap">
-                  <h3 className="project-title">PitchFlow: Reliable Football Data Lakehouse</h3>
+                  <h3 className="project-title">InsightMesh — NL2SQL Analytics Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Architected a local, production-grade football data lakehouse implementing Medallion Architecture (Bronze–Silver–Gold Delta tables on MinIO) over pinned StatsBomb Premier League 2015/16 event data (380 matches, millions of events). Features controlled chaos testing (Quarantine routing for malformed/duplicate records), idempotent Delta merges & PostgreSQL serving projections, orchestrated end-to-end via Apache Airflow with Metabase analytics dashboards.
+                  Built a local-first workspace for read-only PostgreSQL and MySQL analytics through natural-language questions. The FastAPI runtime combines datasource-scoped hybrid retrieval, dialect-aware SQL generation, SQLGlot safety validation, verified execution, history, saved analyses, and dashboards. Benchmarked 37 cases on a 6-table e-commerce demo schema with 100% result and join-path accuracy, 66.98% mean entity precision, and 5/5 unsafe requests blocked.
                 </p>
                 <div className="project-tags">
-                  <span className="badge">Apache Spark</span>
-                  <span className="badge">Delta Lake</span>
-                  <span className="badge">Apache Airflow</span>
-                  <span className="badge">MinIO (S3)</span>
-                  <span className="badge">PostgreSQL</span>
-                  <span className="badge">Metabase</span>
                   <span className="badge">Python</span>
+                  <span className="badge">FastAPI</span>
+                  <span className="badge">PostgreSQL</span>
+                  <span className="badge">MySQL</span>
+                  <span className="badge">pgvector</span>
+                  <span className="badge">SQLGlot</span>
+                  <span className="badge">Next.js</span>
+                  <span className="badge">TypeScript</span>
                   <span className="badge">Docker</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/phatle224/pitchflow-reliable-football-data-lakehouse" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
+                  <a href="https://github.com/phatle224/insightmesh-multi-source-analytics" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
@@ -544,7 +545,7 @@ export default function App() {
                   <h3 className="project-title">Hybrid Data Ingestion & Streaming Platform</h3>
                 </div>
                 <p className="project-desc">
-                  Unified real-time contract changes from the sales database with offline Excel reports from partners and administrators in a centralized insurance analytics platform. Built a hybrid ELT pipeline using Debezium, Kafka, and FastAPI ingestion into PostgreSQL, then designed a 4-layer Medallion dbt pipeline (Staging → Intermediate → Warehouse → Mart) with 54 automated data quality tests across 5 dimensions and 2 facts. Cross-channel deduplication uses composite business keys and ROW_NUMBER() so official online records take precedence over duplicate offline submissions.
+                  Independent re-implementation of an ingestion pattern from my internship, rebuilt from scratch with synthetic Faker data; no company code or production data was used. The project combines PostgreSQL CDC (Debezium + Kafka) with Excel batch ingestion, then applies a four-layer ELT pipeline in dbt: 10 staging, 2 intermediate, 7 warehouse, and 2 mart models. It includes 101 configured dbt tests and cross-channel deduplication with composite business keys and ROW_NUMBER(), with online records taking precedence. Latest local verification: 95 pass, 2 warnings, and 4 documented synthetic-data failures.
                 </p>
                 <div className="project-tags">
                   <span className="badge">Python</span>
@@ -634,32 +635,31 @@ export default function App() {
               </div>
             </div>
 
-            {/* Pinned Project 2: Agent SQL (Multi-Source NL2SQL Platform) */}
-            <div className="glass-card project-card blue-hover">
-              <div className="project-visual blue">
-                <Terminal className="project-visual-icon" size={56} />
-                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Multi-Source NL2SQL</div>
+            {/* Pinned Project 2: PitchFlow Data Lakehouse */}
+            <div className="glass-card project-card purple-hover">
+              <div className="project-visual purple">
+                <Workflow className="project-visual-icon" size={56} />
+                <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Delta Lakehouse & Spark</div>
               </div>
               <div className="project-body">
                 <div className="project-header-wrap">
-                  <h3 className="project-title">Agent SQL — Multi-Source NL2SQL Analytics Platform</h3>
+                  <h3 className="project-title">PitchFlow: Reliable Football Data Lakehouse</h3>
                 </div>
                 <p className="project-desc">
-                  Enabled non-technical users to explore fragmented data sources with natural-language questions instead of manually writing SQL. Built a FastAPI query service to validate, sanitize, route, and execute queries across PostgreSQL, MySQL, MongoDB, SQLite, DuckDB, and imported datasets. The Next.js and TypeScript dashboard manages data connections, supports natural-language and manual SQL queries, and presents results through interactive tables and charts.
+                  Architected a local, production-grade football data lakehouse implementing Medallion Architecture (Bronze–Silver–Gold Delta tables on MinIO) over pinned StatsBomb Premier League 2015/16 event data (380 matches, millions of events). Features controlled chaos testing, idempotent Delta merges, PostgreSQL serving projections, and end-to-end Apache Airflow orchestration with Metabase analytics dashboards.
                 </p>
                 <div className="project-tags">
-                  <span className="badge">Python</span>
-                  <span className="badge">FastAPI</span>
-                  <span className="badge">MySQL</span>
-                  <span className="badge">MongoDB</span>
+                  <span className="badge">Apache Spark</span>
+                  <span className="badge">Delta Lake</span>
+                  <span className="badge">Apache Airflow</span>
+                  <span className="badge">MinIO (S3)</span>
                   <span className="badge">PostgreSQL</span>
-                  <span className="badge">SQLite</span>
-                  <span className="badge">DuckDB</span>
-                  <span className="badge">React</span>
-                  <span className="badge">TypeScript</span>
+                  <span className="badge">Metabase</span>
+                  <span className="badge">Python</span>
+                  <span className="badge">Docker</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/phatle224/Agent_SQL" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-blue)' }}>
+                  <a href="https://github.com/phatle224/pitchflow-reliable-football-data-lakehouse" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
                   </a>
                 </div>
