@@ -1052,6 +1052,13 @@ a {
   flex-grow: 1;
 }
 
+.project-desc-compact {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;

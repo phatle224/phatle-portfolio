@@ -612,21 +612,8 @@ export default function App() {
                 <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Real-time OLAP</div>
               </div>
               <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">FMCG Real-Time Analytics Platform</h3>
-                </div>
-                <p className="project-desc">
-                  Architected a dual-path (hot/cold) FMCG analytical platform processing 1,000 POS transactions/second. Features real-time ingestion in ClickHouse with Materialized Views, reducing query latencies on 10M+ records to sub-100ms. Integrates historical data via Trino over Iceberg datasets on MinIO, and a Cube.js semantic layer serving Prometheus/Grafana.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">ClickHouse</span>
-                  <span className="badge">Kafka</span>
-                  <span className="badge">Trino</span>
-                  <span className="badge">Apache Iceberg</span>
-                  <span className="badge">Cube.js</span>
-                  <span className="badge">MinIO</span>
-                  <span className="badge">Grafana</span>
-                </div>
+                <h3 className="project-title">FMCG Real-Time Analytics Platform</h3>
+                <p className="project-desc">Hot/cold analytics platform for 1,000 POS events per second with ClickHouse, Kafka, Iceberg, Trino, and Cube.js.</p>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/fmcg-real-time-analytics" target="_blank" rel="noopener noreferrer" className="project-link">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
@@ -642,22 +629,10 @@ export default function App() {
                 <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Delta Lakehouse & Spark</div>
               </div>
               <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">PitchFlow: Reliable Football Data Lakehouse</h3>
-                </div>
-                <p className="project-desc">
+                <h3 className="project-title">PitchFlow: Reliable Football Data Lakehouse</h3>
+                <p className="project-desc project-desc-compact">
                   Architected a local, production-grade football data lakehouse implementing Medallion Architecture (Bronze–Silver–Gold Delta tables on MinIO) over pinned StatsBomb Premier League 2015/16 event data (380 matches, millions of events). Features controlled chaos testing, idempotent Delta merges, PostgreSQL serving projections, and end-to-end Apache Airflow orchestration with Metabase analytics dashboards.
                 </p>
-                <div className="project-tags">
-                  <span className="badge">Apache Spark</span>
-                  <span className="badge">Delta Lake</span>
-                  <span className="badge">Apache Airflow</span>
-                  <span className="badge">MinIO (S3)</span>
-                  <span className="badge">PostgreSQL</span>
-                  <span className="badge">Metabase</span>
-                  <span className="badge">Python</span>
-                  <span className="badge">Docker</span>
-                </div>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/pitchflow-reliable-football-data-lakehouse" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
@@ -666,27 +641,49 @@ export default function App() {
               </div>
             </div>
 
-            {/* Pinned Project 3: AI FOR EDUCATION */}
+            {/* Pinned Project 3: Agent SQL */}
+            <div className="glass-card project-card blue-hover">
+              <div className="project-visual blue">
+                <Terminal className="project-visual-icon" size={56} />
+                <div className="badge badge-blue" style={{ position: 'absolute', top: '16px', right: '16px' }}>Multi-agent NL2SQL</div>
+              </div>
+              <div className="project-body">
+                <h3 className="project-title">Agent SQL - Multi-Agent NL2SQL System</h3>
+                <p className="project-desc">Multi-agent NL2SQL platform with seven data adapters, Kafka workflows, and rule-based safety isolation.</p>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/Agent_SQL" target="_blank" rel="noopener noreferrer" className="project-link">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Pinned Project 4: WordMesh */}
+            <div className="glass-card project-card">
+              <div className="project-visual">
+                <FileText className="project-visual-icon" size={56} />
+                <div className="badge badge-green" style={{ position: 'absolute', top: '16px', right: '16px' }}>Vocabulary Platform</div>
+              </div>
+              <div className="project-body">
+                <h3 className="project-title">WordMesh Vocabulary Platform</h3>
+                <p className="project-desc">Full-stack vocabulary workspace for lookup, enrichment, spaced repetition, and learner progress.</p>
+                <div className="project-links">
+                  <a href="https://github.com/phatle224/wordmesh-vocab-builder" target="_blank" rel="noopener noreferrer" className="project-link">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Pinned Project 5: AI FOR EDUCATION */}
             <div className="glass-card project-card purple-hover">
               <div className="project-visual purple">
                 <Cpu className="project-visual-icon" size={56} />
                 <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Collab AI Project</div>
               </div>
               <div className="project-body">
-                <div className="project-header-wrap">
-                  <h3 className="project-title">AI for Education Platform</h3>
-                </div>
-                <p className="project-desc">
-                  Collaborative platform utilizing LLMs and generative AI tools to optimize learning workflows. Features intelligent tutoring, automated grading assistants, and dynamic curriculum generation. Aims to streamline educational processes and provide personalized tutoring paths.
-                </p>
-                <div className="project-tags">
-                  <span className="badge">Python</span>
-                  <span className="badge">PyTorch</span>
-                  <span className="badge">HuggingFace</span>
-                  <span className="badge">FastAPI</span>
-                  <span className="badge">Next.js</span>
-                  <span className="badge">Gemini API</span>
-                </div>
+                <h3 className="project-title">AI for Education Platform</h3>
+                <p className="project-desc">Collaborative LLM platform for intelligent tutoring, grading assistance, and personalized curriculum generation.</p>
                 <div className="project-links">
                   <a href="https://github.com/phatle224/AI-FOR-EDUCATION" target="_blank" rel="noopener noreferrer" className="project-link" style={{ color: 'var(--aurora-purple)' }}>
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Code Repo
