@@ -623,7 +623,7 @@ export default function App() {
             </div>
 
             {/* Pinned Project 2: PitchFlow Data Lakehouse */}
-            <div className="glass-card project-card purple-hover">
+            <div className="glass-card project-card purple-hover" style={{ order: -1 }}>
               <div className="project-visual purple">
                 <Workflow className="project-visual-icon" size={56} />
                 <div className="badge badge-purple" style={{ position: 'absolute', top: '16px', right: '16px' }}>Delta Lakehouse & Spark</div>
